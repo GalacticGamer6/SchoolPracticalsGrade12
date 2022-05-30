@@ -52,7 +52,7 @@ public class RatingArray {
     }
     
     public double getAverage(){
-        int total  = 0;
+        double total  = 0;
         
         for(int i = 0 ; i < size ; i++){
             total += ratings[i];
@@ -64,7 +64,7 @@ public class RatingArray {
     public void sort(){
         
         
-        for(int last_index = ratings.length - 1 ; last_index >= 0 ; last_index--){
+        for(int last_index = size - 1 ; last_index >= 0 ; last_index--){
             for(int current_index = 0 ; current_index < last_index; current_index++){
                 if(ratings[current_index] > ratings[current_index + 1]){
                     int temp = ratings[current_index];

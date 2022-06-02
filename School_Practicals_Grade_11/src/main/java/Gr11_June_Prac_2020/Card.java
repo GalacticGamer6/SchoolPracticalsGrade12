@@ -29,7 +29,7 @@ public class Card {
     }
     
     public boolean checkLight(){
-        if(type.equals("Light")){
+        if(type.contains("Light")){
             return true;
         }
         else{
@@ -47,23 +47,18 @@ public class Card {
     }
     
     public String getNameTypePoints(){
-        return getName() + calcPoints();
+        return getName() + ": " + calcPoints();
     }
     
     public String toString(){
+        
         if(checkLight()){
-            String output = "" + LIGHTFACTOR;
+            return(name + "\t" + type + "\t" + basic + " " + special + " " + leader + " " + unique + " " + LIGHTFACTOR);
         }
         else{
-            String output = "" + DARKFACTOR; 
+            return(name + "\t" + type + "\t" + basic + " " + special + " " + leader + " " + unique + " " + DARKFACTOR);
         }
         
-        return("Name: " + name + "\n"
-                +"type: " + type + "\n"
-                +"basic: " + basic+ "\n"
-                + "special " + special + "\n"
-                +"leader: " + leader + "\n"
-                +"unique: " + unique) + " output";
         
     }
 }

@@ -3,16 +3,20 @@ package Array_Manipulation;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Person_Manager {
 
     private Person person_array[] = new Person[100]; 
     private int size = 0;
     
-    public Person_Manager(String file_path) throws FileNotFoundException{
+    public Person_Manager(String file_path){
         
-         Scanner sc = new Scanner(new File(file_path));
-         
+         Scanner sc;
+        try {
+            sc = new Scanner(new File(file_path));
+            
          while(sc.hasNext()){
              
              String line = sc.nextLine();
@@ -27,9 +31,17 @@ public class Person_Manager {
              person_array[size] = current_person;
              size++;
          }
+         
+         
+        } catch (FileNotFoundException ex) {
+            System.out.println("File not found");
+        }
+         
+
     }
     
     public Person BinearySearch(Person Sorted_Array[], String name){
+        
         int start = 0; 
         int end = size - 1;
         
@@ -40,8 +52,60 @@ public class Person_Manager {
             if(person_array[mid].getName().compareTo(name) == 0){
                 return person_array[mid];
             }
-            else if(person_array[mid].getName().compareTo(name) > )
+            else if(person_array[mid].getName().compareTo(name) > 0){
+                end = mid - 1;
+            }
+            else if(person_array[mid].getName().compareTo(name) < 0){
+                start = mid + 1;
+            }
         }
+        return null;
     }
+    
+    //by name
+    public void NameSort(){
+        
+        for(int i = 0; i < size; i++){
+            for(int j = i + 1; j < size; j++){
+             
+                if(person_array[i].getName().compareTo(person_array[j].getName()) > 0){
+                    Person temp = person_array[j];
+                    person_array[j] = person_array[i];
+                    person_array[i] = temp;
+                }
+                
+            }
+            
+        }
+        
+    }
+    //by age
+    public void AgeSort(){
+        
+        for(int last_index = size - 1; last_index >= 0; last_index--){
+            for(int current_index = 0; current_index < last_index ; current_index++){
+                
+                if(person_array[current_index].getAge() > person_array[last_index].getAge()){
+                    Person temp = person_array[current_index];
+                    person_array[current_index] = person_array[last_index];
+                    person_array[last_index] = temp;
+                }
+            }
+        }
+        
+    }
+    
+    public String toString(){
+        
+        String output = "";
+        
+        for(int i = 0 ; i < size; i++){
+            output += person_array[i].toString() + "\n";
+        }
+        
+        return output;
+    }
+    
+    
     
 }

@@ -1,20 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package Array_Manipulation;
 
-/**
- *
- * @author Neeraavr
- */
+import java.io.FileNotFoundException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class Frontend extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Frontend
-     */
+    Person_Manager pm = new Person_Manager("data\\Persons.txt");
+    
     public Frontend() {
-        initComponents();
+        
+        initComponents();        
+        
+        display_person_area.setText(pm.toString());
     }
 
     /**
@@ -59,9 +57,19 @@ public class Frontend extends javax.swing.JFrame {
 
         sort_by_age_button.setText("Age Sort");
         sort_by_age_button.setFocusable(false);
+        sort_by_age_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sort_by_age_buttonActionPerformed(evt);
+            }
+        });
 
         sort_by_name_button.setText("Name Sort");
         sort_by_name_button.setFocusable(false);
+        sort_by_name_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sort_by_name_buttonActionPerformed(evt);
+            }
+        });
 
         person_to_delete_field.setFocusable(false);
 
@@ -143,9 +151,18 @@ public class Frontend extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
+    private void sort_by_age_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sort_by_age_buttonActionPerformed
+        pm.AgeSort();
+        display_person_area.setText(pm.toString());
+    }//GEN-LAST:event_sort_by_age_buttonActionPerformed
+
+    
+    
+    private void sort_by_name_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sort_by_name_buttonActionPerformed
+        pm.NameSort();
+        display_person_area.setText(pm.toString());
+    }//GEN-LAST:event_sort_by_name_buttonActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

@@ -2,6 +2,8 @@ package Array_Manipulation;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -104,6 +106,54 @@ public class Person_Manager {
         }
         
         return output;
+    }
+    
+    public void shiftUp(int pos){
+        size++;
+        for(int i = size; i >= pos;i--){
+                                            //if error, change to i - 1
+            person_array[i] = person_array[i + 1];
+            
+        }
+        
+        
+    }
+    
+    public void insertPerson(Person p){
+        AgeSort();
+        int pos = 0;
+            
+        System.out.println(person_array[pos].toString());
+            System.out.println(p.toString());
+        
+        while(person_array[pos].getAge() <= p.getAge()){
+                      
+            pos++;
+        }
+        shiftUp(pos);
+        person_array[pos] = p;
+        PrintPerson(p);
+        
+    }
+    
+    private void PrintPerson(Person p){
+        
+        String name = p.getName();
+        String surname = p.getSurname();
+        int age = p.getAge();
+        
+        try {
+            
+            FileWriter fw = new FileWriter(new File("data\\Persons.txt"));
+            fw.append(name + "#" + surname + "#" + age + "\n");
+           
+            
+        } catch (IOException ex) {
+            
+            System.out.println("File not found");
+        }
+        
+        
     }
     
     

@@ -5,7 +5,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Frontend extends javax.swing.JFrame {
-
+    int i = 0;
     Person_Manager pm = new Person_Manager("data\\Persons.txt");
     
     public Frontend() {

@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -110,9 +111,9 @@ public class Person_Manager {
     
     public void shiftUp(int pos){
         size++;
-        for(int i = size; i >= pos;i--){
+        for(int i = size; i > pos;i--){
                                             //if error, change to i - 1
-            person_array[i] = person_array[i + 1];
+            person_array[i] = person_array[i - 1];
             
         }
         
@@ -120,15 +121,18 @@ public class Person_Manager {
     }
     
     public void insertPerson(Person p){
-        AgeSort();
+        NameSort();
         int pos = 0;
             
         System.out.println(person_array[pos].toString());
             System.out.println(p.toString());
         
-        while(person_array[pos].getAge() <= p.getAge()){
+        while(person_array[pos].getName().compareTo(p.getName()) < 0){
                       
             pos++;
+            if(pos == size){
+                break;
+            }
         }
         shiftUp(pos);
         person_array[pos] = p;
@@ -145,7 +149,8 @@ public class Person_Manager {
         try {
             
             FileWriter fw = new FileWriter(new File("data\\Persons.txt"));
-            fw.append(name + "#" + surname + "#" + age + "\n");
+            PrintWriter pw = new PrintWriter(fw);
+            pw.println(name + "#" + surname + "#" + age + "\n");
            
             
         } catch (IOException ex) {

@@ -6,12 +6,12 @@ import java.util.logging.Logger;
 
 public class Frontend extends javax.swing.JFrame {
     int i = 0;
-    Person_Manager pm = new Person_Manager("data\\Persons.txt");
+    Person_Manager pm;
     
     public Frontend() {
         
         initComponents();        
-        
+        pm = new Person_Manager("data\\Persons.txt");
         display_person_area.setText(pm.toString());
     }
 

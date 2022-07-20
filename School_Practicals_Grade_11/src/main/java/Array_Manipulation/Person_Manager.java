@@ -43,7 +43,7 @@ public class Person_Manager {
 
     }
     
-    public Person BinearySearch( String name){
+    public Person BinearySearch(String name){
         
         NameSort();
         
@@ -151,8 +151,8 @@ public class Person_Manager {
         
         try {
             
-            FileWriter fw = new FileWriter(new File("data\\Persons.txt"));
-            PrintWriter pw = new PrintWriter(fw);
+            FileWriter fw = new FileWriter(new File("data\\Persons.txt"),true);
+            PrintWriter pw = new PrintWriter(fw,true);
             pw.println(name + "#" + surname + "#" + age + "\n");
            
             pw.close();

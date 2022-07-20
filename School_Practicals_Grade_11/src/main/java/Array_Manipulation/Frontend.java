@@ -6,7 +6,6 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class Frontend extends javax.swing.JFrame {
-    int i = 0;
     Person_Manager pm;
     
     public Frontend() {
@@ -169,14 +168,15 @@ public class Frontend extends javax.swing.JFrame {
 
     private void add_person_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_person_buttonActionPerformed
         Person new_person = new Person(name_field.getText(), surname_field.getText(), Integer.parseInt(age_field.getText()));
-        new_person.toString();
+//        new_person.toString();
         pm.insertPerson(new_person);
         display_person_area.setText(pm.toString());
     }//GEN-LAST:event_add_person_buttonActionPerformed
 
     private void delete_from_array_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_from_array_buttonActionPerformed
-
+        pm.deletePerson(person_to_delete_field.getText());
         JOptionPane.showMessageDialog(rootPane, pm.deletePerson(person_to_delete_field.toString()));
+        display_person_area.setText(pm.toString());
     }//GEN-LAST:event_delete_from_array_buttonActionPerformed
 
     public static void main(String args[]) {

@@ -3,6 +3,7 @@ package Array_Manipulation;
 import java.io.FileNotFoundException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 public class Frontend extends javax.swing.JFrame {
     int i = 0;
@@ -76,10 +77,13 @@ public class Frontend extends javax.swing.JFrame {
             }
         });
 
-        person_to_delete_field.setFocusable(false);
-
         delete_from_array_button.setText("DELETE");
         delete_from_array_button.setFocusable(false);
+        delete_from_array_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delete_from_array_buttonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -167,7 +171,13 @@ public class Frontend extends javax.swing.JFrame {
         Person new_person = new Person(name_field.getText(), surname_field.getText(), Integer.parseInt(age_field.getText()));
         new_person.toString();
         pm.insertPerson(new_person);
+        display_person_area.setText(pm.toString());
     }//GEN-LAST:event_add_person_buttonActionPerformed
+
+    private void delete_from_array_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_from_array_buttonActionPerformed
+
+        JOptionPane.showMessageDialog(rootPane, pm.deletePerson(person_to_delete_field.toString()));
+    }//GEN-LAST:event_delete_from_array_buttonActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

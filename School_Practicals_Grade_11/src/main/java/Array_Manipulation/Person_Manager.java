@@ -43,7 +43,9 @@ public class Person_Manager {
 
     }
     
-    public Person BinearySearch(Person Sorted_Array[], String name){
+    public Person BinearySearch( String name){
+        
+        NameSort();
         
         int start = 0; 
         int end = size - 1;
@@ -124,8 +126,8 @@ public class Person_Manager {
         NameSort();
         int pos = 0;
             
-        System.out.println(person_array[pos].toString());
-            System.out.println(p.toString());
+//        System.out.println(person_array[pos].toString());
+//            System.out.println(p.toString());
         
         while(person_array[pos].getName().compareTo(p.getName()) < 0){
                       
@@ -133,6 +135,7 @@ public class Person_Manager {
             if(pos == size){
                 break;
             }
+            
         }
         shiftUp(pos);
         person_array[pos] = p;
@@ -152,6 +155,7 @@ public class Person_Manager {
             PrintWriter pw = new PrintWriter(fw);
             pw.println(name + "#" + surname + "#" + age + "\n");
            
+            pw.close();
             
         } catch (IOException ex) {
             
@@ -160,6 +164,23 @@ public class Person_Manager {
         
         
     }
+    
+    public String deletePerson(String first_name){
+        int person_pos = 0;
+        for(int i = 0 ; i < size; i++){
+            if(person_array[i].getName().equals(first_name)){
+                person_pos = i;
+                break;
+            }
+        }
+        
+        for(int j = person_pos; j < size - 1; j++){
+            person_array[j] = person_array[j + 1];
+        }
+        return("Person Succesfully delted");
+    }
+    
+    
     
     
     

@@ -176,6 +176,7 @@ public class Person_Manager {
         
         for(int j = person_pos; j < size - 1; j++){
             person_array[j] = person_array[j + 1];
+            System.out.println(person_array.toString());
         }
         return("Person Succesfully delted");
     }

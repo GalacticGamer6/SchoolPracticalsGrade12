@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package SQL;
+package DBPractise;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -19,8 +19,8 @@ import java.sql.SQLException;
 public class DBManager {
 
 	private static final String driver = "com.mysql.cj.jdbc.Driver";
-	private static final String url = "jdbc:mysql://localhost:3306/library";
-	private static final String user = "root";
+	private static final String url = "jdbc:mysql://102.130.115.69:3306/neeraavrDB";
+	private static final String user = "neeraavr";
 	private static final String pass = "Reddam2021";
 	private PreparedStatement statement;
 	private ResultSet resultSet;
@@ -60,14 +60,14 @@ public class DBManager {
 	}
 
 	//SELECT
-	public String query(String stmt) throws SQLException {
+	public ResultSet query(String stmt) throws SQLException {
 		statement = conn.prepareStatement(stmt);
 		resultSet = statement.executeQuery();
 
 		String output = processBookRequest(resultSet);
 
 		statement.close();
-		return output;
+		return resultSet;
 	}
 
 	//process a SPECIFIC query
@@ -93,15 +93,15 @@ public class DBManager {
 		return null;
 	}
 
-	public static void main(String[] args) {
-		DBManager dm = new DBManager();
-		try {
-			//dm.update("INSERT INTO books VALUES(1334, 'Hills have eyes','Peter Peterson', 2, 2.75)");
-
-			String q = dm.query("SELECT * FROM books");
-			System.out.println(q);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-	}
+//	public static void main(String[] args) {
+//		DBManager dm = new DBManager();
+//		try {
+//			//dm.update("INSERT INTO books VALUES(1334, 'Hills have eyes','Peter Peterson', 2, 2.75)");
+//
+//			String q = dm.query("SELECT * FROM books");
+//			System.out.println(q);
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}
+//	}
 }

@@ -17,13 +17,6 @@ public class Date_Time_Formatter {
     
     LocalDate another_date = LocalDate.now();
     
-    
-    //convert from string to date
-    String date = "4 July 2208";
-    DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-    LocalDate date2 = LocalDate.parse(date, formatter2);
-        System.out.println(date2);
-        
     }
     
 }

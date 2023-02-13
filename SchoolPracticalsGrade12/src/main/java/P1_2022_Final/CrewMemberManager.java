@@ -93,11 +93,42 @@ public class CrewMemberManager {
                 
                 CrewMember current_crew_member = crew_members[findCrewMember(crew_id)];
                 
-                if(current_crew_member.ge)
-                
-                
+                if(current_crew_member instanceof Officer){
+                    
+                switch(((Officer) current_crew_member).getRank()){
+                    
+                    case 1: if(test_result > 75 & test_result < 79){
+                                ((Officer) current_crew_member).Promote();
+                              }
+                            break;
+                    case 2: if(test_result > 80 & test_result < 84){
+                                ((Officer) current_crew_member).Promote();
+                              }
+                            break;
+                    case 3: if(test_result > 85 & test_result < 89){
+                                ((Officer) current_crew_member).Promote();
+                              }
+                            break;
+                    case 4: if(test_result > 90 & test_result < 100){
+                                ((Officer) current_crew_member).Promote();
+                              }
+                            break;                            
+                    default: ((Officer) current_crew_member).Promote();
+                            break;
+                    }
+                }
+                else{
+                    
+                    if(test_result > 75){
+                        
+                        
+                        
+                    }
+                    
+                    
+                    
+                }
             }
-            
         } catch (FileNotFoundException ex) {
             System.out.println("FILE NOT FOUND");
         }

@@ -13,6 +13,11 @@ public class Student {
         strength = s;
         
     }
+
+    @Override
+    public String toString() {
+        return "Student{" + "name=" + name + ", age=" + age + ", strength=" + strength + '}';
+    }
     
     
     

@@ -51,5 +51,12 @@ public class Assessment {
         return  is_exam;
 
     }
+    
+    @Override
+    public String toString(){
+    
+    return assesesment_name + " : " + mark + "/" + total;  
+        
+    }
 
 }

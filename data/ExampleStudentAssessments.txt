@@ -1,0 +1,19 @@
+ETP2602#Assignment 1 - Multiple Choice#45#44#0,2#2022-02-22#false
+ETP2602#Assignment 2 - Starting a business#80#66#0,2#2022-05-12#false
+ETP2602#Exam#100#55#0,6#2022-06-15#true
+FIN2603#Assignment 1 - Research Project#100#75#0,4#2022-04-31#false
+FIN2603#Exam#100#100#0,6#2022-06-11#true
+MNE2602#Assignment 1 - Document Creation#20#19#0,15#2022-01-31#false
+MNE2602#Assignment 2 - Business Cards#30#20#0,15#2022-02-22#false
+MNE2602#Assignment 3 - Websites#20#15#0,15#2022-03-09#false
+MNE2602#Exam#100#80#0,55#2022-06-09#true
+MNE2603#Assignment 1 - Multiple choice#50#50#0,1#2022-02-09#false
+MNE2603#Assignment 2 - Entrepreuneurship in South Africa#70#20#0,3#2022-03-22#false
+MNE2603#Exam#100#25#0,6#2022-06-31#true
+MNE2604#Assignment 1 - Field Reasearch at Steers#50#29#0,1#2022-01-29#false
+MNE2604#Assignment 2 - Field Reasearch at McDonalds#50#33#0,1#2022-02-22#false
+MNE2604#Assignment 3 - Field Reasearch at Nandoes#50#45#0,1#2022-03-16#false
+MNE2604#Exam#50#45#0,7#2022-06-16#true
+MNG2601#Exam#150#122#1#2022-06-02#true
+RSK2602#Assignment 1 - Factory Operations Field Work#50#45#0,3#2022-02-28#false
+RSK2602#Exam#60#46#0,7#2022-06-28#true

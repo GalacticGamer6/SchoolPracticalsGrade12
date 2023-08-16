@@ -84,11 +84,14 @@ public class Module {
     public String toString(){
     
         String output = "";
+        output += "Module: ";
         
-        for(int i = 0 ; i < size ;i++){
+        for(int i = 0;i < size;i++){
         
-        output += assessments[i].get
+            output += assessments[i].toString() + "|";
+        
         }
-    
+        return output;
     }
+    
 }
